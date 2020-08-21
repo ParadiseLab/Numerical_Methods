@@ -1,8 +1,8 @@
 import numpy as np
 
-#TODO 
 
-#TODO add doc + add multiple root find
+
+#TODO add doc + add multiple root finding
 def newton(function, derivative, x0, max_depth=10,  eps=1e-10):
     x=x0
     i=0
@@ -28,3 +28,16 @@ f = lambda x : x**2-x-1
 Df = lambda x : 2*x -1
 x = newton(f, Df, 4, 6)
 print("The golden ratio is : {}".format(x))
+
+# Find the the super golden ratio
+f = lambda x : x**3-x**2-1
+Df = lambda x : 3*x**2-2*x
+x = newton(f, Df, 4, 6)
+print("The super golden ratio is : {}".format(x))
+
+# Unprecise function choice
+# Find the the value of pi
+f = lambda x : np.cos(x)
+Df = lambda x : -np.sin(x)
+x = newton(f, Df, 1.55, 1000, 1e-10)
+print("The value of pi is : {}".format(2*x))
