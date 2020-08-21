@@ -1,8 +1,18 @@
 import numpy as np
 
-def newton(function, derivative, x0, depth=4):
+#TODO 
+
+#TODO add doc + add multiple root find
+def newton(function, derivative, x0, max_depth=10,  eps=1e-10):
     x=x0
-    for i in range(depth) : x=x-function(x)/derivative(x)
+    i=0
+    while i < max_depth: 
+        if (derivative(x)==0):
+            print("Singularity at x={}".format(x))
+        if function(x)<=eps:
+            return x
+        x=x-function(x)/derivative(x)
+        i=i+1
     return x
 
 
