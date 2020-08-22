@@ -23,7 +23,7 @@ print("The golden ratio is : {}".format(x))
 # Find the the solution
 f = lambda x : np.tan(x)-1
 x = dichoto(f, (0.5, 3.15/4), )
-print("The solution to tan(x)=0.5 is : {}".format(x))
+print("The solution to tan(x)=1 is : {}".format(x))
 
 # Find the the solution
 f = lambda x : (x-2)**2
