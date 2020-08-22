@@ -9,7 +9,7 @@ def newton(function, derivative, x0, max_depth=10,  eps=1e-10):
     while i < max_depth: 
         if (derivative(x)==0):
             print("Singularity at x={}".format(x))
-        if function(x)<=eps:
+        if np.abs(function(x))<=eps:
             return x
         x=x-function(x)/derivative(x)
         i=i+1
