@@ -12,6 +12,6 @@ def riemann(function, p0, n : int):
 
 
 # find the value of pi by integrating sin(x)^2 from 0 to 2pi
-f = lambda x : np.sin(x)**2
-x = riemann(f, (0, 2*np.pi), int(1e6))
+f = lambda x : x**2*np.cos(x)
+x = riemann(f, (0, np.pi), int(1e6))
 print("The value of pi is : {}".format(x))
